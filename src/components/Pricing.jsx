@@ -15,7 +15,7 @@ const tiers = [
     {
         title: 'developers',
         price: 'usage-based',
-        description: 'integrate answerAI into your product.',
+        description: 'integrate ChatLeafy into your product.',
         features: [
             'api access',
             'custom placement rules',
@@ -42,7 +42,7 @@ const tiers = [
 
 function Pricing() {
     return (
-        <section id="pricing" className="py-32 px-6">
+        <section id="pricing" className="py-32 px-6 bg-gray-50">
             <div className="max-w-6xl mx-auto">
                 {/* Section header */}
                 <div className="text-center mb-20">
@@ -57,19 +57,19 @@ function Pricing() {
                     {tiers.map((tier) => (
                         <div
                             key={tier.title}
-                            className={`card flex flex-col ${tier.primary ? 'border-accent/30' : ''}`}
+                            className={`card flex flex-col bg-white ${tier.primary ? 'border-primary/20 shadow-md ring-1 ring-primary/5' : ''}`}
                         >
                             <div className="mb-6">
-                                <h3 className="text-lg text-white mb-2">{tier.title}</h3>
-                                <div className="text-2xl text-white font-light mb-2">{tier.price}</div>
+                                <h3 className="text-lg text-primary font-semibold mb-2 capitalize">{tier.title}</h3>
+                                <div className="text-3xl text-primary font-bold mb-2 tracking-tight">{tier.price}</div>
                                 <p className="text-secondary text-sm">{tier.description}</p>
                             </div>
 
-                            <ul className="space-y-3 mb-8 flex-1">
+                            <ul className="space-y-4 mb-8 flex-1">
                                 {tier.features.map((feature) => (
-                                    <li key={feature} className="flex items-center gap-3 text-sm text-secondary">
-                                        <svg className="w-4 h-4 text-muted flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.5 12.75l6 6 9-13.5" />
+                                    <li key={feature} className="flex items-start gap-3 text-sm text-secondary">
+                                        <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                         {feature}
                                     </li>
@@ -77,7 +77,7 @@ function Pricing() {
                             </ul>
 
                             <button
-                                className={tier.primary ? 'btn-outlined' : 'btn-secondary'}
+                                className={tier.primary ? 'btn-primary w-full' : 'btn-secondary w-full'}
                             >
                                 {tier.cta}
                             </button>

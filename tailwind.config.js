@@ -7,13 +7,15 @@ export default {
     theme: {
         extend: {
             colors: {
-                bg: '#000000',
-                primary: '#ffffff',
-                secondary: '#a1a1a1',
-                muted: '#666666',
-                accent: '#4fd1c5',
-                border: 'rgba(255, 255, 255, 0.15)',
-                'border-hover': 'rgba(255, 255, 255, 0.3)',
+                bg: '#FFFFFF',
+                surface: '#F7F7F8',
+                primary: '#1A1A1A',
+                secondary: '#374151',
+                muted: '#6B7280',
+                accent: '#10A37F',
+                'accent-light': '#E6F7F3',
+                border: '#E5E5E5',
+                'border-hover': '#D1D1D1',
             },
             fontFamily: {
                 sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Oxygen', 'Ubuntu', 'sans-serif'],

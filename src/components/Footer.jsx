@@ -7,20 +7,20 @@ const footerLinks = [
 
 function Footer() {
     return (
-        <footer className="py-16 px-6 border-t border-white/10">
+        <footer className="py-16 px-6 border-t border-gray-200 bg-white">
             <div className="max-w-6xl mx-auto">
                 {/* Centered logo section */}
                 <div className="flex flex-col items-center mb-12">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border border-white/20 
-                          bg-black/50 backdrop-blur-sm flex items-center justify-center mb-4
-                          hover:border-white/40 transition-all duration-300">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border border-gray-100 
+                          bg-gray-50 flex items-center justify-center mb-4 shadow-sm
+                          hover:shadow-md transition-all duration-300">
                         <img
-                            src="/assets/answerailogo.png"
-                            alt="answerAI"
-                            className="w-10 h-10 object-contain"
+                            src="/assets/ChatLeafylogo.png"
+                            alt="ChatLeafy"
+                            className="w-10 h-10 object-cover opacity-80"
                         />
                     </div>
-                    <span className="text-white text-lg tracking-wide">answerAI</span>
+                    <span className="text-primary text-lg font-medium tracking-wide">ChatLeafy</span>
                 </div>
 
                 {/* Links */}
@@ -29,7 +29,7 @@ function Footer() {
                         <a
                             key={link.label}
                             href={link.href}
-                            className="text-muted text-sm hover:text-secondary transition-colors duration-300"
+                            className="text-secondary text-sm hover:text-primary transition-colors duration-300 font-medium"
                         >
                             {link.label}
                         </a>
@@ -37,7 +37,7 @@ function Footer() {
                 </div>
 
                 {/* Tagline */}
-                <div className="pt-8 border-t border-white/5 text-center">
+                <div className="pt-8 border-t border-gray-100 text-center">
                     <p className="text-muted text-xs tracking-wide">
                         built for transparent monetization.
                     </p>

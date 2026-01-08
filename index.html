@@ -1,15 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/assets/answerailogo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="answerAI - Free answers funded by relevance. Talk to leading language models for free." />
-    <title>answerAI · free answers. funded by relevance.</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/assets/ChatLeafylogo.png" sizes="192x192" />
+  <style>
+    link[rel="icon"] {
+      filter: invert(1);
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>ChatLeafy - Free ChatGPT, Claude, Gemini & GPT-4 Alternative | 100% Free AI Chat</title>
+  <meta name="title" content="ChatLeafy - Free ChatGPT, Claude, Gemini & GPT-4 Alternative | 100% Free AI Chat" />
+  <meta name="description"
+    content="Talk to GPT-4, Claude 3.5, Gemini, and Llama for FREE. No subscription, no credit card. The best free ChatGPT alternative. Free AI chat powered by leading language models. Works like ChatGPT, Claude AI, Google Gemini, and Microsoft Copilot - completely free forever." />
+
+  <!-- Comprehensive Keywords with ALL Misspellings & Variations -->
+  <meta name="keywords" content="
+      free ai, free ai chat, free chatgpt, free gpt, free llm, free ai assistant, free ai chatbot, ai free, free ai tool, free ai tools, free ai website,
+      
+      chatgpt, cahtgpt, chatgtp, chat gtp, chat-gpt, chatgp, chagpt, chatgptt, chattgpt, chatgbt, chtgpt, chstgpt, cgatgpt, chaygpt, chargpt, chatgpr, chatgpy, chztgpt, catgpt, gptchat, chatgot,
+      chat gpt, chat gpt ai, chatgpt ai, chatgpt free, chatgpt online, chatgpt website, chatgpt free ai, chat gpt free, free chatgpt, free chat gpt, chat gpt free online,
+      chatgpt.com, chatgpt.con, chatgpt.co, chatgpt.om, chatgpt login, chatgpt sign in, chat gpt login, chat gpt website,
+      openai chatgpt, open ai chat gpt, opanai chatgpt, openai chat gpt free, openai free, open ai free, open ai chat, openai chat, open ai ai,
+      chatgpt 4 free, gpt 4 free, gpt4 free, chatgpt alternative, chatgpt alternative free, free chatgpt alternative, chatgpt clone free,
+      
+      gemini, gemeni, geminie, gemmini, gemni, geminai, gemin, gemenii, gimini, geminii, jemini, gemani, gemnii, gemibi,
+      gemini ai, google gemini, google ai gemini, gemini chat, gemini chatbot, gemini free, gemini ai free, google gemini ai, google ai chat, google chat ai, google gemini free,
+      bard, bard ai, bard ai chat, bard ai free, bard google, google bard, google bard ai, google ai free,
+      
+      claude, claud, cloude, clod ai, cloud ai, calude, cluade, cladue, clade, claudeai, claudi, claudee, cluad, cualde, calud, clauede, claide,
+      claude ai, claude chat, claude chatbot, claude free, claude ai free, anthropic claude, anthrophic, anthropic ai, anthropic chat, claude login, claude website,
+      claude 3, claude 3.5, anthropic free, anthropic ai free,
+      
+      copilot, copiot, copiliot, copot, copilt, copliot, copilit, copilote, copilot free, copilot ai,
+      github copilot free, microsoft copilot free, bing copilot free,
+      
+      llama, llama free, llama 3, meta ai free, meta llama free,
+      
+      ai chatgpt, ai gpt, gpt chat, gpt ai, ai tool, ai tools free, ai website, ai bot, ai chatbot free, ai chat free online,
+      ai chat free, talk to ai free, ask ai free, ai free online, best free ai, free language model, llm free,
+      ai no signup, free ai no login, ai chat no sign up, free ai without account, ai without account, free ai without signup, ai chat no registration, anonymous ai chat,
+      free ai like chatgpt, best ai chatbot free, ai assistant free, virtual assistant free, ai helper free, free ai for students,
+      
+      all ai in one, multiple ai tools, all ai tools in one place, all ai models, multiple ai chat,
+      chatgpt and claude, chatgpt and gemini, claude and gemini, ai aggregator, ai hub, ai dashboard, ai playground, ai lab, ai studio, ai console,
+      
+      gpt alternative, claude alternative, gemini alternative, copilot alternative, bard alternative
+    " />
+
+
+  <!-- Robots & Indexing -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://ChatLeafy.com" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ChatLeafy.com" />
+  <meta property="og:title" content="ChatLeafy - Free ChatGPT, Claude & Gemini Alternative | 100% Free AI" />
+  <meta property="og:description"
+    content="Talk to GPT-4, Claude 3.5, Gemini, and Llama completely FREE. No subscription needed. The best free alternative to ChatGPT, Claude AI, and Google Gemini." />
+  <meta property="og:image" content="/assets/ChatLeafylogo.png" />
+  <meta property="og:site_name" content="ChatLeafy" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://ChatLeafy.com" />
+  <meta name="twitter:title" content="ChatLeafy - Free ChatGPT, Claude & Gemini Alternative" />
+  <meta name="twitter:description"
+    content="Talk to GPT-4, Claude 3.5, Gemini, and Llama for FREE. No subscription, no credit card. Best free AI chat." />
+  <meta name="twitter:image" content="/assets/ChatLeafylogo.png" />
+
+  <!-- Additional SEO -->
+  <meta name="author" content="ChatLeafy" />
+  <meta name="application-name" content="ChatLeafy" />
+  <meta name="apple-mobile-web-app-title" content="ChatLeafy - Free AI Chat" />
+  <meta name="subject" content="Free AI Chat Assistant - ChatGPT Claude Gemini Alternative" />
+  <meta name="classification" content="Artificial Intelligence, Chatbot, Free Tool" />
+  <meta name="category" content="Technology, AI, Machine Learning, Free Tools" />
+
+  <!-- Language & Location -->
+  <meta name="language" content="English" />
+  <meta name="geo.region" content="US" />
+  <meta http-equiv="content-language" content="en" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

@@ -11,7 +11,7 @@ const models = [
 ]
 
 const mockResponse = {
-    answer: `Based on the latest research, the most effective approaches to learning a new skill involve spaced repetition, deliberate practice, and immediate feedback loops. Studies show that breaking learning into 25-minute focused sessions with short breaks leads to better retention.
+    ChatLeafy: `Based on the latest research, the most effective approaches to learning a new skill involve spaced repetition, deliberate practice, and immediate feedback loops. Studies show that breaking learning into 25-minute focused sessions with short breaks leads to better retention.
 
 Key principles:
 • Start with fundamentals before advancing
@@ -49,13 +49,13 @@ function Demo() {
     }
 
     return (
-        <section id="demo" className="py-32 px-6 relative">
+        <section id="demo" className="py-32 px-6 relative bg-bg">
             <div className="max-w-3xl mx-auto relative z-10">
                 {/* Section header with logo */}
                 <div className="text-center mb-16">
-                    <div className="w-14 h-14 mx-auto mb-6 rounded-full overflow-hidden border border-white/20 
-                                    bg-black/50 backdrop-blur-sm flex items-center justify-center">
-                        <img src="/assets/answerailogo.png" alt="" className="w-9 h-9 object-contain" />
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-full overflow-hidden border border-border 
+                                    bg-white shadow-sm flex items-center justify-center">
+                        <img src="/assets/ChatLeafylogo.png" alt="" className="w-12 h-12 object-cover opacity-80" />
                     </div>
                     <h2 className="section-title">try it yourself</h2>
                     <p className="section-subtitle mx-auto">
@@ -64,18 +64,18 @@ function Demo() {
                 </div>
 
                 {/* Demo container - glass effect */}
-                <div className="border border-white/15 rounded-xl bg-black/40 backdrop-blur-xl p-0 overflow-hidden
-                                shadow-2xl shadow-black/50">
+                <div className="border border-border rounded-xl bg-white p-0 overflow-hidden
+                                shadow-lg">
                     {/* Top bar */}
-                    <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-white/5">
-                        <span className="text-sm text-secondary tracking-wide">answerAI demo</span>
+                    <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-gray-50/50">
+                        <span className="text-sm text-secondary tracking-wide">ChatLeafy demo</span>
 
                         {/* Model selector */}
                         <div className="relative">
                             <button
                                 onClick={() => setModelDropdownOpen(!modelDropdownOpen)}
-                                className="flex items-center gap-2 px-3 py-1.5 text-sm text-secondary hover:text-white 
-                           border border-white/10 rounded-lg transition-all duration-300 hover:border-white/20"
+                                className="flex items-center gap-2 px-3 py-1.5 text-sm text-secondary hover:text-primary
+                           border border-border rounded-lg transition-all duration-300 hover:border-gray-300 bg-white"
                             >
                                 <span>{selectedModel}</span>
                                 <svg className={`w-4 h-4 transition-transform duration-300 ${modelDropdownOpen ? 'rotate-180' : ''}`}
@@ -85,12 +85,12 @@ function Demo() {
                             </button>
 
                             {modelDropdownOpen && (
-                                <div className="absolute right-0 top-full mt-2 w-48 border border-white/15 rounded-lg 
-                                bg-black/95 backdrop-blur-md overflow-hidden z-10">
+                                <div className="absolute right-0 top-full mt-2 w-48 border border-border rounded-lg 
+                                bg-white shadow-xl overflow-hidden z-10">
                                     {models.map((model, index) => (
                                         <div key={model.id}>
                                             {model.id === 'coming-soon' && (
-                                                <div className="border-t border-white/10" />
+                                                <div className="border-t border-gray-100" />
                                             )}
                                             <button
                                                 onClick={() => {
@@ -102,10 +102,10 @@ function Demo() {
                                                 disabled={!model.available}
                                                 className={`w-full text-left px-4 py-2.5 text-sm transition-all duration-200
                           ${model.available
-                                                        ? 'text-secondary hover:text-white hover:bg-white/5'
+                                                        ? 'text-secondary hover:text-primary hover:bg-gray-50'
                                                         : 'text-muted cursor-not-allowed'
                                                     }
-                          ${selectedModel === model.name ? 'text-white bg-white/5' : ''}
+                          ${selectedModel === model.name ? 'text-primary bg-gray-50 font-medium' : ''}
                         `}
                                             >
                                                 {model.name}
@@ -126,12 +126,12 @@ function Demo() {
                                 onChange={(e) => setQuery(e.target.value)}
                                 onKeyDown={(e) => e.key === 'Enter' && handleGenerate()}
                                 placeholder="ask anything. answers are free."
-                                className="input-outlined flex-1"
+                                className="input-modern flex-1 bg-gray-50 border-gray-200 focus:bg-white"
                             />
                             <button
                                 onClick={handleGenerate}
                                 disabled={isLoading || !query.trim()}
-                                className="btn-outlined whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="btn-primary whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed shadow-none"
                             >
                                 {isLoading ? (
                                     <span className="flex items-center gap-2">
@@ -151,27 +151,27 @@ function Demo() {
 
                     {/* Response area */}
                     {showResponse && (
-                        <div className="border-t border-white/10 animate-fade-in">
-                            {/* Answer section */}
-                            <div className="p-4 border-b border-white/5">
-                                <div className="text-xs text-secondary uppercase tracking-wider mb-3">Answer</div>
-                                <div className="text-white/90 leading-relaxed whitespace-pre-line text-sm">
-                                    {mockResponse.answer}
+                        <div className="border-t border-border animate-fade-in bg-gray-50/30">
+                            {/* ChatLeafy section */}
+                            <div className="p-6 border-b border-border/50">
+                                <div className="text-xs text-secondary uppercase tracking-wider mb-3 font-semibold">ChatLeafy</div>
+                                <div className="text-primary leading-relaxed whitespace-pre-line text-sm">
+                                    {mockResponse.ChatLeafy}
                                 </div>
                             </div>
 
                             {/* Placement section */}
-                            <div className="p-4 border-b border-white/5">
-                                <div className="inline-flex items-center gap-2 px-2 py-1 border border-white/10 rounded text-xs text-secondary mb-3">
-                                    <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+                            <div className="p-6 border-b border-border/50 bg-blue-50/20">
+                                <div className="inline-flex items-center gap-2 px-2.5 py-1 border border-blue-100 bg-white rounded-md text-xs text-secondary mb-4 shadow-sm">
+                                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
                                     Sponsored
                                 </div>
-                                <div className="outlined-subtle p-4 mt-2">
-                                    <div className="text-white text-sm font-medium mb-2">{mockResponse.placement.sponsor}</div>
-                                    <ul className="space-y-1.5">
+                                <div className="bg-white border border-border rounded-xl p-5 shadow-sm">
+                                    <div className="text-primary text-sm font-semibold mb-2">{mockResponse.placement.sponsor}</div>
+                                    <ul className="space-y-2">
                                         {mockResponse.placement.bullets.map((bullet, i) => (
                                             <li key={i} className="text-secondary text-sm flex items-start gap-2">
-                                                <span className="text-muted mt-1">•</span>
+                                                <span className="text-muted mt-1.5 w-1 h-1 bg-gray-300 rounded-full flex-shrink-0"></span>
                                                 {bullet}
                                             </li>
                                         ))}
@@ -180,24 +180,24 @@ function Demo() {
                             </div>
 
                             {/* Disclosure */}
-                            <div className="p-4 flex items-center justify-between">
+                            <div className="p-4 flex items-center justify-between bg-white">
                                 <p className="text-muted text-xs">
-                                    placements help keep answerAI free.
+                                    placements help keep ChatLeafy free.
                                 </p>
 
                                 {/* Frequency toggle */}
                                 <div className="flex items-center gap-3">
                                     <span className="text-xs text-muted">placement frequency</span>
-                                    <div className="toggle-group">
+                                    <div className="flex bg-gray-100 p-1 rounded-lg">
                                         <button
                                             onClick={() => setPlacementFrequency('strict')}
-                                            className={`toggle-option ${placementFrequency === 'strict' ? 'active' : ''}`}
+                                            className={`px-3 py-1 rounded-md text-xs transition-all ${placementFrequency === 'strict' ? 'bg-white text-primary shadow-sm font-medium' : 'text-secondary hover:text-primary'}`}
                                         >
                                             strict
                                         </button>
                                         <button
                                             onClick={() => setPlacementFrequency('relaxed')}
-                                            className={`toggle-option ${placementFrequency === 'relaxed' ? 'active' : ''}`}
+                                            className={`px-3 py-1 rounded-md text-xs transition-all ${placementFrequency === 'relaxed' ? 'bg-white text-primary shadow-sm font-medium' : 'text-secondary hover:text-primary'}`}
                                         >
                                             relaxed
                                         </button>

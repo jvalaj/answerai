@@ -27,7 +27,7 @@ const safetyItems = [
 
 function Safety() {
     return (
-        <section id="safety" className="py-32 px-6">
+        <section id="safety" className="py-32 px-6 bg-white">
             <div className="max-w-4xl mx-auto">
                 {/* Section header */}
                 <div className="text-center mb-20">
@@ -38,19 +38,19 @@ function Safety() {
                 </div>
 
                 {/* Checklist */}
-                <div className="outlined p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="outlined p-10 bg-gray-50/50 border-gray-200">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                         {safetyItems.map((item) => (
                             <div key={item.title} className="flex items-start gap-4 group">
-                                <div className="mt-0.5 w-5 h-5 border border-white/20 rounded flex-shrink-0
-                              flex items-center justify-center group-hover:border-white/40
-                              transition-colors duration-300">
-                                    <svg className="w-3 h-3 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="mt-1 w-6 h-6 border border-gray-300 rounded-md flex-shrink-0
+                                flex items-center justify-center group-hover:border-primary/40 bg-white
+                                transition-colors duration-300">
+                                    <svg className="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 className="text-white text-sm mb-1">{item.title}</h4>
+                                    <h4 className="text-primary text-base font-semibold mb-1.5">{item.title}</h4>
                                     <p className="text-secondary text-sm leading-relaxed">{item.description}</p>
                                 </div>
                             </div>

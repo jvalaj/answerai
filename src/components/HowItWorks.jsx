@@ -30,7 +30,7 @@ const steps = [
 
 const schemaPreview = `{
   "response": {
-    "answer": "...",
+    "ChatLeafy": "...",
     "placement": {
       "sponsor": "Partner",
       "relevance": ["..."],
@@ -41,7 +41,7 @@ const schemaPreview = `{
 
 function HowItWorks() {
     return (
-        <section id="how-it-works" className="py-32 px-6">
+        <section id="how-it-works" className="py-32 px-6 bg-white">
             <div className="max-w-6xl mx-auto">
                 {/* Section header */}
                 <div className="text-center mb-20">
@@ -54,12 +54,12 @@ function HowItWorks() {
                 {/* Steps grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
                     {steps.map((step, index) => (
-                        <div key={step.title} className="card group">
-                            <div className="text-secondary group-hover:text-accent transition-colors duration-400 mb-6">
+                        <div key={step.title} className="card group hover:shadow-xl border-gray-100">
+                            <div className="text-secondary group-hover:text-amber-500 transition-colors duration-400 mb-6 bg-gray-50 w-16 h-16 rounded-xl flex items-center justify-center">
                                 {step.icon}
                             </div>
-                            <div className="text-xs text-muted tracking-wider mb-2">0{index + 1}</div>
-                            <h3 className="text-lg text-white mb-3">{step.title}</h3>
+                            <div className="text-xs text-muted tracking-wider mb-2 font-semibold">0{index + 1}</div>
+                            <h3 className="text-lg text-primary font-semibold mb-3">{step.title}</h3>
                             <p className="text-secondary text-sm leading-relaxed">{step.description}</p>
                         </div>
                     ))}
@@ -67,14 +67,14 @@ function HowItWorks() {
 
                 {/* Schema preview */}
                 <div className="max-w-xl mx-auto">
-                    <div className="outlined-subtle p-4">
-                        <div className="flex items-center gap-2 mb-3">
-                            <div className="w-2 h-2 rounded-full bg-white/20" />
-                            <div className="w-2 h-2 rounded-full bg-white/20" />
-                            <div className="w-2 h-2 rounded-full bg-white/20" />
-                            <span className="text-xs text-muted ml-2">response.json</span>
+                    <div className="border border-border rounded-xl p-6 bg-gray-50 shadow-inner">
+                        <div className="flex items-center gap-2 mb-4">
+                            <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                            <span className="text-xs text-muted ml-2 font-mono">response.json</span>
                         </div>
-                        <pre className="text-xs text-secondary font-mono leading-relaxed overflow-x-auto">
+                        <pre className="text-xs text-secondary font-mono leading-relaxed overflow-x-auto p-2">
                             {schemaPreview}
                         </pre>
                     </div>
