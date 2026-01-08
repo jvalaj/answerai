@@ -1,8 +1,8 @@
 const footerLinks = [
-    { label: 'privacy', href: '#' },
-    { label: 'terms', href: '#' },
-    { label: 'docs', href: '#docs' },
-    { label: 'contact', href: '#' },
+    { label: 'Free ChatGPT guide', href: '/free-chatgpt' },
+    { label: 'How it works', href: '/how-it-works' },
+    { label: 'Privacy', href: '/privacy' },
+    { label: 'Terms', href: '/terms' },
 ]
 
 function Footer() {

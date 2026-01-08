@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 
-const navLinks = []
+const navLinks = [
+    { label: 'Free ChatGPT', href: '/free-chatgpt' },
+    { label: 'How it works', href: '/how-it-works' },
+]
 
-function Navbar({ onStartChatting }) {
+function Navbar({ onStartChatting, onNavigate }) {
     const [scrolled, setScrolled] = useState(false)
 
     useEffect(() => {
@@ -10,6 +13,14 @@ function Navbar({ onStartChatting }) {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
+    const handleNav = (href) => {
+        if (onNavigate) {
+            onNavigate(href)
+        } else {
+            window.location.href = href
+        }
+    }
 
     return (
         <nav
@@ -19,7 +30,7 @@ function Navbar({ onStartChatting }) {
         >
             <div className="px-6 py-3 flex items-center justify-between">
                 {/* Logo */}
-                <a href="#" className="flex items-center gap-2 group">
+                <button onClick={() => handleNav('/')} className="flex items-center gap-2 group">
                     <div className="w-12 h-12 rounded-full bg-white text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-105 overflow-hidden">
                         <img
                             src="/assets/ChatLeafylogo.png"
@@ -27,18 +38,18 @@ function Navbar({ onStartChatting }) {
                             className="w-10 h-10 object-cover invert"
                         />
                     </div>
-                    </a>
+                </button>
 
                 {/* Links - Desktop */}
                 <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
-                        <a
+                        <button
                             key={link.label}
-                            href={link.href}
+                            onClick={() => handleNav(link.href)}
                             className="text-sm font-medium text-secondary hover:text-primary transition-colors duration-200"
                         >
                             {link.label}
-                        </a>
+                        </button>
                     ))}
                 </div>
 

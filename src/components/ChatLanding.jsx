@@ -203,6 +203,10 @@ function ChatLanding({ onLearnMore }) {
 
                 {/* Chat Area */}
                 <main className="flex-1 w-full relative z-10 flex flex-col">
+                <div className="sr-only">
+                    <h1>Free AI Chat — ChatGPT-like experience, no signup</h1>
+                    <p>ChatLeafy lets you chat with modern language models for free with no account required.</p>
+                </div>
                 {messages.length === 0 ? (
                     /* Empty State - Perplexity Style Centered */
                     <div className="flex-1 flex flex-col items-center justify-center px-4 animate-fade-in">
@@ -212,6 +216,16 @@ function ChatLanding({ onLearnMore }) {
                                 <img src="/assets/ChatLeafylogoinverted.png" alt="ChatLeafy AI" className="w-12 h-12 md:w-20 md:h-20 object-contain" />
                             </div>
                             <span className="text-3xl md:text-7xl text-primary tracking-tight text-center">Ask anything.</span>
+                        </div>
+
+                        <div className="text-center max-w-3xl mx-auto mb-6 space-y-2">
+                            <h2 className="text-3xl font-semibold text-primary">
+                                Free AI Chat — ChatGPT-like experience, no signup
+                            </h2>
+                            <p className="text-secondary">
+                                ChatLeafy is a free AI chat tool. Start a session instantly and switch between models without
+                                creating an account.
+                            </p>
                         </div>
 
                         {/* Large Search Input */}
@@ -304,7 +318,7 @@ function ChatLanding({ onLearnMore }) {
                             {/* Footer CTA */}
                             <div className="mt-8 text-center">
                                 <button onClick={onLearnMore} className="group inline-flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-                                    <span>Learn more about ChatLeafy.com</span>
+                                    <span>Read the Free ChatGPT guide</span>
                                     <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                     </svg>
