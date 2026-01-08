@@ -122,8 +122,13 @@ function ChatLanding({ onLearnMore }) {
 
     return (
         <div className="flex h-screen bg-white font-sans text-primary">
+            {/* Sidebar Overlay for Mobile */}
+            {sidebarOpen && (
+                <div className="fixed inset-0 bg-black/20 z-40 md:hidden" onClick={() => setSidebarOpen(false)} />
+            )}
+            
             {/* Sidebar */}
-            <div className={`${sidebarOpen ? 'w-64' : 'w-0'} bg-gray-50 text-gray-900 flex flex-col transition-all duration-300 overflow-hidden border-r border-gray-200`}>
+            <div className={`${sidebarOpen ? 'w-64 translate-x-0' : 'w-0 -translate-x-full md:translate-x-0'} fixed md:relative z-50 md:z-auto h-full bg-gray-50 text-gray-900 flex flex-col transition-all duration-300 overflow-hidden border-r border-gray-200`}>
                 {/* Sidebar Header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-200">
                     <div className="flex items-center gap-2">
@@ -186,14 +191,15 @@ function ChatLanding({ onLearnMore }) {
 
             {/* Main Content */}
             <div className="flex-1 flex flex-col relative">
-                {/* Toggle Sidebar Button */}
-                {!sidebarOpen && (
-                    <button onClick={() => setSidebarOpen(true)} className="absolute left-4 top-4 z-40 p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                )}
+                {/* Toggle Sidebar Button - always visible on mobile */}
+                <button 
+                    onClick={() => setSidebarOpen(true)} 
+                    className={`absolute left-4 top-4 z-30 p-2 hover:bg-gray-100 rounded-lg transition-colors ${sidebarOpen ? 'hidden md:hidden' : 'block'}`}
+                >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
 
                 {/* Chat Area */}
                 <main className="flex-1 w-full relative z-10 flex flex-col">
@@ -201,11 +207,11 @@ function ChatLanding({ onLearnMore }) {
                     /* Empty State - Perplexity Style Centered */
                     <div className="flex-1 flex flex-col items-center justify-center px-4 animate-fade-in">
                         {/* Centered Logo with Text */}
-                        <div className="mb-12 flex items-center gap-3">
-                            <div className="w-20 h-20 rounded-full bg-white text-white flex items-center justify-center flex-shrink-0 overflow-hidden">
-                                <img src="/assets/ChatLeafylogoinverted.png" alt="ChatLeafy AI" className="w-20 h-20 object-contain" />
+                        <div className="mb-8 md:mb-12 flex flex-col md:flex-row items-center gap-2 md:gap-3">
+                            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full bg-white text-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+                                <img src="/assets/ChatLeafylogoinverted.png" alt="ChatLeafy AI" className="w-12 h-12 md:w-20 md:h-20 object-contain" />
                             </div>
-                            <span className="text-7xl text-primary tracking-tight">Ask anything. </span>
+                            <span className="text-3xl md:text-7xl text-primary tracking-tight text-center">Ask anything.</span>
                         </div>
 
                         {/* Large Search Input */}
