@@ -128,7 +128,7 @@ function ChatLanding({ onLearnMore }) {
                 <div className="flex items-center justify-between p-4 border-b border-gray-200">
                     <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
-                            <img src="./assets/ChatLeafylogo.png" alt="ChatLeafy" className="w-7 h-7 object-contain invert" />
+                            <img src="./assets/ChatLeafylogoinverted.png" alt="ChatLeafy" className="w-7 h-7 object-contain" />
                         </div>
                      
                     </div>
@@ -203,7 +203,7 @@ function ChatLanding({ onLearnMore }) {
                         {/* Centered Logo with Text */}
                         <div className="mb-12 flex items-center gap-3">
                             <div className="w-20 h-20 rounded-full bg-white text-white flex items-center justify-center flex-shrink-0 overflow-hidden">
-                                <img src="./assets/ChatLeafylogo.png" alt="ChatLeafy AI" className="w-20 h-20 object-contain invert" />
+                                <img src="./assets/ChatLeafylogoinverted.png" alt="ChatLeafy AI" className="w-20 h-20 object-contain" />
                             </div>
                             <span className="text-7xl text-primary tracking-tight">Ask anything. </span>
                         </div>
