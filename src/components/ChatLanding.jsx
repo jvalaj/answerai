@@ -219,11 +219,8 @@ function ChatLanding({ onLearnMore }) {
                         </div>
 
                         <div className="text-center max-w-3xl mx-auto mb-6 space-y-2">
-                            <h2 className="text-3xl font-semibold text-primary">
-                                Free AI Chat — ChatGPT-like experience, no signup
-                            </h2>
                             <p className="text-secondary">
-                                ChatLeafy is a free AI chat tool. Start a session instantly and switch between models without
+                                Start a session instantly and switch between models without
                                 creating an account.
                             </p>
                         </div>
